@@ -152,7 +152,7 @@ class ReconEngine:
         srvs = []
         for port in self.wiki.keys():
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock.settimeout(0.01)
+            sock.settimeout(0.250)
             if sock.connect_ex((ip, port)) == 0:
                 srvs.append(self.wiki[port][0])
             sock.close()
